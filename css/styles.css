@@ -220,6 +220,10 @@ div.event-description::-webkit-scrollbar-thumb{
 	margin-left: -2%;
 	}
 
+	div.event.full{
+		top: 0 !important;
+	}
+
 	div.close-button{
 		font-size: 48px;
 		top: 0;
