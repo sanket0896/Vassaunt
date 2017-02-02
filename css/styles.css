@@ -9,9 +9,30 @@ html,body{
 	padding: 0;
 }
 
-/*body{
-	background: green;
-}*/
+body{
+	background: #000000;
+}
+
+#pre-load-wrap{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #111111;
+}
+
+.pre-load{
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	right: 10%;
+	text-align: center;
+}
+
+#pre-load-head{
+	text-transform: uppercase;
+	font-size: 72px;
+	color: red;
+}
 
 #svg{
 	background-size: contain;
@@ -159,28 +180,86 @@ div.event-description::-webkit-scrollbar-thumb{
 }
 
 .abt-wrap{
-			position: absolute;
-			background: #34ef3d;
-			height: 100%;
-			width: 100%;
-		}
-		.abt{
-		position: absolute;	
-		left: 15%;
-		top: 15%;
-		right: 15%;
-		bottom: 5%;
-		text-align: center; 
-		padding-right: 0;
-		
-		}	
-		.abt-description{
-		font-size: 1.5rem;
-		}		
-		.abt-heading{
-			font-size: 3em;
-		}
+	position: absolute;
+	background: #34ef3d;
+	height: 100%;
+	width: 100%;
+}
+.abt{
+	position: absolute;	
+	left: 15%;
+	top: 15%;
+	right: 15%;
+	bottom: 5%;
+	text-align: center; 
+	padding-right: 0;
+}	
+.abt-description{
+	font-size: 1.5rem;
+}		
+.abt-heading{
+	font-size: 3em;
+}
+.bgimg {
+    background-image: url('got.jpg');
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
 
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+
+.gallery-wrap{
+	position: absolute;
+	background: #f73de5;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+.gallery-head{
+font-size: 48px;
+}
+.gallery-btn{
+	text-decoration: none;
+	color:white;
+	border-radius: 5px;
+	padding: 1em;
+	background: blue;
+	width: 200px;
+	left: 50%;
+	right: 50%;
+	position: absolute;
+	bottom: 10%;
+	transition: all 0.5s;
+}
+.gallery-btn:hover{
+	background: yellow;
+	color: black;
+}
+
+.team-wrap{
+	
+	position: absolute;
+	background: #fff;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
 /************************ For screen sizes below 767px *********************************/
 
 @media only screen and (max-width: 767px) {
