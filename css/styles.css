@@ -1,5 +1,5 @@
 *{
-	box-sizing: border-box;
+	box-sizing: border-box; 
 }
 
 html,body{
@@ -11,7 +11,14 @@ html,body{
 
 body{
 	background: #000000;
+	font-family: GOT,serif;
 }
+
+/*div{
+	overflow-x: hidden;
+	font-family: 'Actor',sans-serif;
+	font-family: 'Carrois Gothic', sans-serif;
+}*/
 
 #pre-load-wrap{
 	position: absolute;
@@ -68,10 +75,12 @@ div.event.panel{
 	position: absolute;
 	left: 0;
 	right: auto;
-	cursor: pointer;
 	transition: all .5s;
 }
 
+.cursor-pointer{
+	cursor: pointer !important;
+}
 
 div.event.full{
 	width: 100% !important;
@@ -115,10 +124,39 @@ div.close-button{
 	cursor: pointer;
 }
 
+div.back-button{
+	font-size: 48px;
+	position: fixed;
+	top: 22px;
+	left: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
 div.event-list{
 	position: absolute;
 	left: 5%;
 	top: 23%;
+	bottom: 5%;
+	overflow-y: auto;
+	padding-right: 25px;
+}
+
+div.event-list.mobile-screen{
+	left: 20%;
+	right: 20%;
+}
+
+div.event-description.mobile-screen{
+	left: 5%;
+	padding-right: 3%;
+}	
+
+div.event-list ul{
+	max-width: 100%;
+	padding-right: auto;
+	padding-left: auto;
+
 }
 
 div.event-list li{
@@ -126,17 +164,22 @@ div.event-list li{
 	list-style: none;
 	margin-bottom: 1rem;
 	font-size: 1.5rem;
-	border:2px solid transparent;
+	/*border:2px solid transparent;*/
 	text-align: center;
+	max-width: 80%;
+	color: black;
+	transition: all 0.3s;
 }
 
 div.event-list li:hover{
 	cursor: pointer;
-	border:2px solid rgba(0,0,0,0.3);
+	color: #fff;
+	/*border:2px solid rgba(0,0,0,0.3);*/
 }
 
 div.event-list li.selected{
-	border:2px solid black;
+	/*border:2px solid black;*/
+	color: #fff;
 }
 
 div.event-description{
@@ -145,10 +188,12 @@ div.event-description{
 	top: 23%;
 	right: 10%;
 	bottom: 5%;
-	font-size: 1.5rem;
-	text-align: justify;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 2;
 	overflow-y: auto; 
 	padding-right: 30px;
+	font-family: serif;
 }
 
 .hidden{
@@ -160,15 +205,15 @@ div.event-description{
 	display: block;
 }
 
-div.event-description::-webkit-scrollbar{
+*::-webkit-scrollbar{
 	width: 3px;
 }
 
-div.event-description::-webkit-scrollbar-track{
+*::-webkit-scrollbar-track{
 	background: transparent;
 }
 
-div.event-description::-webkit-scrollbar-thumb{
+*::-webkit-scrollbar-thumb{
 	background: #000;
 	border-top: 2px solid transparent;
 	border-bottom: 2px solid transparent;
@@ -187,18 +232,21 @@ div.event-description::-webkit-scrollbar-thumb{
 }
 .abt{
 	position: absolute;	
-	left: 15%;
-	top: 15%;
-	right: 15%;
+	left: 5%;
+	top: 0;
+	right: 5%;
 	bottom: 5%;
 	text-align: center; 
 	padding-right: 0;
 }	
 .abt-description{
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	line-height: 2;
+	font-family: Carrois, sans-serif;
 }		
 .abt-heading{
-	font-size: 3em;
+	font-size: 2.5em;
+
 }
 .bgimg {
     background-image: url('got.jpg');
@@ -213,9 +261,8 @@ div.event-description::-webkit-scrollbar-thumb{
 
 .middle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 1%;
+    left: 40%;
     text-align: center;
 }
 
@@ -233,6 +280,7 @@ hr {
 }
 .gallery-head{
 font-size: 48px;
+margin-top: 20%;
 }
 .gallery-btn{
 	text-decoration: none;
@@ -252,14 +300,107 @@ font-size: 48px;
 	color: black;
 }
 
+div#abt-wrap1{
+	opacity: 0;
+}
+
 .team-wrap{
-	
 	position: absolute;
 	background: #fff;
 	height: 100%;
 	width: 100%;
 	text-align: center;
+	opacity: 0;
 }
+
+.team-head{
+	position: absolute;
+	top: 7%;
+	width: 100%;
+	text-align: center;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.team{
+	/*position: absolute;
+	top: 25%;*/
+	height: 100%;
+	width: 90%;
+	margin-left: 10%;
+	margin-right: auto;
+	display: block;
+	margin-top: 10%;
+
+}
+
+.team-item{
+	height: 40%;
+	width: 20%;
+	margin: 1%;
+	float: left;
+	transition: all 0.5s;
+	position: relative;
+}
+
+.designation{
+	position: absolute;
+	bottom: 0;
+	padding:5% 2%;
+	background: rgba(0,0,0,0.3);
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+}
+
+.info{
+	display: none;
+	position: absolute;
+	top: 0;
+	padding:40% 2% 0 2%;
+	background: rgba(0,0,0,0.3);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	transition: all 1.5s;
+}
+
+
+div.team-item:hover .info{
+	display: block;
+	
+}
+
+#t1{
+	background: #123456;
+}
+
+#t2{
+	background: #12312a;
+}
+
+#t3{
+	background: #ae3456;
+}
+
+#t4{
+	background: #fe24f6;
+}
+
+#t5{
+	background: #1237d6;
+}
+
+#t6{
+	background: #12f456;
+}
+
+
+
+
 /************************ For screen sizes below 767px *********************************/
 
 @media only screen and (max-width: 767px) {
@@ -308,6 +449,13 @@ font-size: 48px;
 		top: 0;
 		right: 20px;
 	}
+
+	div.back-button{
+		font-size: 36px;
+		top: 4px;
+		left: 20px;
+	}
+
 	div.event-description{
 		left: 35%;
 		top: 15%;
