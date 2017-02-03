@@ -262,6 +262,9 @@ var countdownfunction = setInterval(function() {
 					$('div.event.panel.full div.event-content-wrapper.hidden')
 						.addClass("visible");
 
+					$('div.event.panel.full')
+						.removeClass("cursor-pointer")	
+
 					if(winWidth<767)
 					{
 						$('div.event.panel.full div.event-content-wrapper div.event-list')
@@ -306,7 +309,8 @@ var countdownfunction = setInterval(function() {
 					thisPanel.removeClass("z-index",function(){
 							console.log("unhide");
 						});
-
+					$('div.event.panel.full')
+						.addClass("cursor-pointer");
 					isFull=false;
 				});
 				
