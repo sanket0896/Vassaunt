@@ -16,6 +16,8 @@ $('document').ready(function(){
 	var hasEventPageArrived = false;
 	console.log("declaring:"+hasEventPageArrived);
 
+	var hasTeamPageArrived = false;
+
 	$(window).on("resize",function(){
 		winHeight = $(window).height();
 		console.log(winHeight);
@@ -174,15 +176,17 @@ $('document').ready(function(){
 	.addTo(controller)
 	.addIndicators();
 
-	// var teamFadeIn = new ScrollMagic.Scene({
-	// 	triggerElement: '#team-wrap',
-	// 	triggerHook: 0,
-	// 	offset: 0,
-	// 	duration: "100%"
-	// })
-	// .setTween(tl5)
-	// .addTo(controller)
-	// .addIndicators();
+	var teamFadeIn = new ScrollMagic.Scene({
+		triggerElement: '#team-wrap',
+		triggerHook: 0,
+		offset: 0,
+		duration: "100%"
+	})
+	.setTween(tl5)
+	.on('start',Start4)
+	.on('end',Start5)
+	.addTo(controller)
+	.addIndicators();
 
 	var teamPin = new ScrollMagic.Scene({
 		triggerElement: '#team-wrap',
@@ -191,8 +195,6 @@ $('document').ready(function(){
 		duration: "100%"
 	})
 	.setPin('#team-wrap',{pushFollowers:false})
-	.on('start', fadeInLast)
-	.on('end',Start)
 	.addTo(controller)
 	.addIndicators();
 
@@ -245,6 +247,17 @@ var countdownfunction = setInterval(function() {
 		$('div.event-wrapper')
 			.addClass("z-index");	
 			console.log("yes");
+	}
+
+	if (!hasTeamPageArrived) {
+		$('div.team-wrap')
+			.removeClass("z-index");
+			console.log(" team no");
+	}
+	else{
+		$('div.team-wrap')
+			.addClass("z-index");
+			console.log("team added yes");
 	}
 	});
 	
@@ -309,7 +322,7 @@ var countdownfunction = setInterval(function() {
 					thisPanel.removeClass("z-index",function(){
 							console.log("unhide");
 						});
-					$('div.event.panel.full')
+					$('div.event.panel')
 						.addClass("cursor-pointer");
 					isFull=false;
 				});
@@ -391,24 +404,51 @@ var countdownfunction = setInterval(function() {
 		}
 	}
 
-	function Start1(){}
-
-	function fadeInLast(){
-		$('.team-wrap').css("overflow","auto");
+	function Start4(){
+		
 		var direction = controller.info("scrollDirection");
 		if(direction=="FORWARD"){
-		var tl6 = new TimelineLite()
-	.to('#team-wrap',5,{
-		opacity:1
-	});}
-	else if(direction=="REVERSE"){
-		$('.team-wrap').css("overflow","hidden");
-		var tl6 = new TimelineLite()
-	.to('#team-wrap',0.1,{
-		opacity:0
-	});
+			hasTeamPageArrived = true;
+		console.log("team arrived"+hasTeamPageArrived);
+		}
+		else if(direction=="REVERSE"){
+			hasTeamPageArrived = false;
+
+		console.log("team arrived"+hasTeamPageArrived);
+		}
 	}
+
+	function Start5(){
+		// var direction = controller.info("scrollDirection");
+		// if(direction=="REVERSE"){
+		// 	hasTeamPageArrived = true;
+		// console.log("team arrived"+hasTeamPageArrived);
+		// }
+		// else if(direction=="FORWARD"){
+		// 	hasTeamPageArrived = false;
+
+		// console.log("team arrived"+hasTeamPageArrived);
+		// }
 	}
+
+	function Start1(){}
+
+	// function fadeInLast(){
+	// // 	$('.team-wrap').css("overflow","auto");
+	// // 	var direction = controller.info("scrollDirection");
+	// // 	if(direction=="FORWARD"){
+	// // 	var tl6 = new TimelineLite()
+	// // .to('#team-wrap',5,{
+	// // 	opacity:1
+	// // });}
+	// // else if(direction=="REVERSE"){
+	// // 	$('.team-wrap').css("overflow","hidden");
+	// // 	var tl6 = new TimelineLite()
+	// // .to('#team-wrap',0.1,{
+	// // 	opacity:0
+	// // });
+	// // }
+	// }
 
 	// function fadeOutLast(){
 	// 	$('.team-wrap').css("overflow","hidden");

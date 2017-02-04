@@ -304,23 +304,23 @@ div#abt-wrap1{
 	opacity: 0;
 }
 
-.team-wrap{
+/*.team-wrap{
 	position: absolute;
 	background: #fff;
 	height: 100%;
 	width: 100%;
 	text-align: center;
 	opacity: 0;
-}
-
-.team-head{
+}*/
+/*
+.team-head111{
 	position: absolute;
 	top: 7%;
 	width: 100%;
 	text-align: center;
 	font-size: 2.5rem;
 	text-transform: uppercase;
-}
+}*/
 
 .team{
 	/*position: absolute;
@@ -330,7 +330,7 @@ div#abt-wrap1{
 	margin-left: 10%;
 	margin-right: auto;
 	display: block;
-	margin-top: 10%;
+	margin-top: 40%;
 
 }
 
@@ -346,7 +346,7 @@ div#abt-wrap1{
 .designation{
 	position: absolute;
 	bottom: 0;
-	padding:5% 2%;
+	padding:2% 2%;
 	background: rgba(0,0,0,0.3);
 	width: 100%;
 	text-align: center;
@@ -369,7 +369,7 @@ div#abt-wrap1{
 }
 
 
-div.team-item:hover .info{
+div.pic2:hover .info{
 	display: block;
 	
 }
@@ -398,7 +398,114 @@ div.team-item:hover .info{
 	background: #12f456;
 }
 
+.team-head
+	{
+	background: url('1.png');
+	background-size: contain;
+	background-repeat: repeat;
+	height: 30%;
+	z-index: -1;
+	overflow-y: auto;
+}
+.team1
+	{
+	background: url('1.png');
+	background-size: contain;
+	/*background-repeat: repeat;*/
+	height: auto;
+	z-index: -1;
+	overflow-y: auto;
+}
 
+/*#lift
+	{
+	background-image: url('b.png');
+	background-size: cover;
+	height: 1080px;
+	background-attachment: fixed;
+	z-index: 1;
+	margin-left: 5%;
+}*/
+
+.team-wrap .team1 .row a{
+	text-decoration: none;
+	color: white;
+}
+
+.pic1
+	 {
+	 	position: relative;
+	width: 15%;
+	border-radius: 5px;
+	margin: 50px;
+	float: left;
+	height: 30%;
+	background-size: contain !important;
+}
+
+.single-left{
+	margin-left: 16% !important;
+}
+
+.single-right{
+	margin-right: 16% !important;
+}
+
+.pic1 h4 span,.pic2 h4 span{
+	position: absolute;
+	bottom: 0;
+	padding:2% 2%;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+.pic1 h5 span,.pic2 h5 span{
+	display: none;
+	position: absolute;
+	top: 0;
+	padding:30% 2% 0 2%;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	transition: all 1.5s;
+}
+
+.pic1:hover h5 span,.pic2:hover h5 span{
+	display: block !important;
+}
+
+.pic2
+	 {
+	 	position: relative;
+	width: 15%;
+	height: 30%;
+	border-radius: 5px;
+	margin: 50px;
+	float: right;
+	background-size: contain !important;
+}
+
+.container {
+    padding: 2px 16px;
+}
+h1
+{
+	font-size: 56px;
+	text-align: center;
+}
+.row
+{
+	width: 100%;
+	display: block;
+	background: url('2.png');
+	background-size: contain;
+}
 
 
 /************************ For screen sizes below 767px *********************************/
@@ -464,5 +571,27 @@ div.team-item:hover .info{
 		font-size: 1.5rem;
 		text-align: center; 
 		padding-right: 0;
+	}
+	
+	.pic1{
+
+	width: 25%;
+	margin: 20px;
+	margin-left: 10%;
+	}
+
+	.single-right{
+		margin-right: 10% !important;
+	}
+
+	.single-left{
+		margin-left: 10% !important;
+	}
+
+	.pic2{
+
+	width: 25%;
+	margin: 20px;
+	margin-right: 10%;
 	}
 }
