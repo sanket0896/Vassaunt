@@ -6,6 +6,22 @@
 
 $('document').ready(function(){
 
+	$( ".cross" ).hide();
+	$( ".menu" ).hide();
+	$( ".hamburger" ).click(function() {
+	$( ".menu" ).slideToggle( "slow", function() {
+	$( ".hamburger" ).hide();
+	$( ".cross" ).show();
+	});
+	});
+
+	$( ".cross" ).click(function() {
+	$( ".menu" ).slideToggle( "slow", function() {
+	$( ".cross" ).hide();
+	$( ".hamburger" ).show();
+	});
+	});
+
 	//Initialise Controller
 	var controller = new ScrollMagic.Controller();
 	var winHeight= $(window).height();
@@ -342,6 +358,7 @@ var countdownfunction = setInterval(function() {
 					.removeClass("visible");
 				$(thisItem)
 					.removeClass("selected");
+				$('.hamburger').show();	
 				
 			});
 
@@ -361,6 +378,7 @@ var countdownfunction = setInterval(function() {
 							.addClass("visible");
 					}
 					else{
+						$('.hamburger').hide();
 						$('div.event.panel.full div.back-button')
 							.removeClass("hidden");
 						$('div.event.panel.full div.event-content-wrapper div.event-list')
