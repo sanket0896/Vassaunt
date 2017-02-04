@@ -22,6 +22,13 @@ $('document').ready(function(){
 	});
 	});
 
+	$(window).scroll(function() {
+		if($(window).scrollTop()>50)
+			$("p.scroll-info").css("opacity",0);
+		else
+			$("p.scroll-info").css("opacity",1);
+	});
+
 	//Initialise Controller
 	var controller = new ScrollMagic.Controller();
 	var winHeight= $(window).height();
@@ -110,8 +117,7 @@ $('document').ready(function(){
 		duration:"100%"
 	})
 	.setTween(tl1)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var gatePin = new ScrollMagic.Scene({
 		triggerElement: '#svg-wrap',
@@ -121,8 +127,7 @@ $('document').ready(function(){
 	})
 	.setPin("#svg-wrap",{pushFollowers:false})
 	.on("end",Start)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var eventFadeIn = new ScrollMagic.Scene({
 		triggerElement: '#event',
@@ -133,8 +138,7 @@ $('document').ready(function(){
 	.setTween(tl2)
 	.on('start',Start2)
 	.on('end',Start3)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var eventPin = new ScrollMagic.Scene({
 		triggerElement: '#event',
@@ -145,8 +149,7 @@ $('document').ready(function(){
 	.setPin("#event",{pushFollowers:false})
 	.on('start', Start1)
 	.on('end',Start)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var abtFadeIn = new ScrollMagic.Scene({
 		triggerElement: '#abt-wrap',
@@ -155,8 +158,7 @@ $('document').ready(function(){
 		duration: "100%"
 	})
 	.setTween(tl3)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var abtPin = new ScrollMagic.Scene({
 		triggerElement: '#abt-wrap',
@@ -167,8 +169,7 @@ $('document').ready(function(){
 	.setPin('#abt-wrap',{pushFollowers:false})
 	.on('start', Start1)
 	.on('end',Start)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	// var galleryFadeIn = new ScrollMagic.Scene({
 	// 	triggerElement: '#gallery-wrap',
@@ -201,8 +202,7 @@ $('document').ready(function(){
 	.setTween(tl5)
 	.on('start',Start4)
 	.on('end',Start5)
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
 
 	var teamPin = new ScrollMagic.Scene({
 		triggerElement: '#team-wrap',
@@ -211,8 +211,8 @@ $('document').ready(function(){
 		duration: "100%"
 	})
 	.setPin('#team-wrap',{pushFollowers:false})
-	.addTo(controller)
-	.addIndicators();
+	.addTo(controller);
+	
 
 	/*************** About Page ***************/
 	var countDownDate = new Date("Feb 17, 2017 00:00:00").getTime();

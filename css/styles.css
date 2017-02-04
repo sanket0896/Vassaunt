@@ -103,9 +103,16 @@ body{
 	background-color: yellow;
 	background: url('/Vassaunt/images/svg-back.jpg');
 	background-size: cover;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
+	text-align: center;
+}
 
-
+.scroll-info{
+	/*position: absolute;
+	top: 0;*/
+	margin-bottom: -1%;
+	font-size: 1rem;
+	color: #fa3;
 }
 
 div.event-wrapper{
