@@ -238,6 +238,7 @@ div.event-description{
 	bottom: 5%;
 	text-align: center; 
 	padding-right: 0;
+	overflow-y: auto;
 }	
 .abt-description{
 	font-size: 1.2rem;

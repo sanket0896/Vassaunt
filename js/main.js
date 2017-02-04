@@ -154,27 +154,27 @@ $('document').ready(function(){
 	.addTo(controller)
 	.addIndicators();
 
-	var galleryFadeIn = new ScrollMagic.Scene({
-		triggerElement: '#gallery-wrap',
-		triggerHook: 0,
-		offset: 50,
-		duration: "100%"
-	})
-	.setTween(tl4)
-	.addTo(controller)
-	.addIndicators();
+	// var galleryFadeIn = new ScrollMagic.Scene({
+	// 	triggerElement: '#gallery-wrap',
+	// 	triggerHook: 0,
+	// 	offset: 50,
+	// 	duration: "100%"
+	// })
+	// .setTween(tl4)
+	// .addTo(controller)
+	// .addIndicators();
 
-	var galleryPin = new ScrollMagic.Scene({
-		triggerElement: '#gallery-wrap',
-		triggerHook: 0,
-		offset: 0,
-		duration: "100%"
-	})
-	.setPin('#gallery-wrap',{pushFollowers:false})
-	.on('start', Start1)
-	.on('end',Start)
-	.addTo(controller)
-	.addIndicators();
+	// var galleryPin = new ScrollMagic.Scene({
+	// 	triggerElement: '#gallery-wrap',
+	// 	triggerHook: 0,
+	// 	offset: 0,
+	// 	duration: "100%"
+	// })
+	// .setPin('#gallery-wrap',{pushFollowers:false})
+	// .on('start', Start1)
+	// .on('end',Start)
+	// .addTo(controller)
+	// .addIndicators();
 
 	var teamFadeIn = new ScrollMagic.Scene({
 		triggerElement: '#team-wrap',
