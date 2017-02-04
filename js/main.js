@@ -269,6 +269,7 @@ var countdownfunction = setInterval(function() {
 			if(!isFull){
 				t=false;
 				thisPanel=$(this);
+				$('div.event.panel > h2').hide();
 				thisPanel.addClass("full z-index");
 				$('body').addClass("hide-overflow");
 				thisPanel.one("transitionend", function() {
@@ -307,6 +308,7 @@ var countdownfunction = setInterval(function() {
 				isFull=true;
 			} 
 			$('div.event.panel.full div.close-button').on("click",function() {
+				$('div.event.panel > h2').show();
 				thisPanel.removeClass("full");
 				$('body').removeClass("hide-overflow");
 				$('div.event-list')

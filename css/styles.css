@@ -109,21 +109,25 @@ div.event.full{
 div.event.panel1{
 	left: 0;
 	background: transparent url(/Vassaunt/images/img-1.png) no-repeat center center;
+	background-size: cover;
 }
 
 div.event.panel2{
 	left: 25%;
-	background: transparent url(/Vassaunt/images/img-2.jpg) no-repeat center center;
+	background: transparent url(/Vassaunt/images/img2.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 div.event.panel3{
 	left: 50%;
-	background: transparent url(/Vassaunt/images/img-3.jpg) no-repeat center center;
+	background: transparent url(/Vassaunt/images/img3.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 div.event.panel4{
 	left: 75%;
-	background: transparent url(/Vassaunt/images/img-4.png) no-repeat center center;
+	background: transparent url(/Vassaunt/images/img4.jpg) no-repeat center center;
+	background-size: cover;
 }
 
 div.close-button{
@@ -540,6 +544,10 @@ h1
 	position: absolute;
 	top: 0;
 	bottom: auto;
+	}
+
+	div.event.panel > h2{
+	margin-top: 7%;
 	}
 
 	div.event.panel1{
