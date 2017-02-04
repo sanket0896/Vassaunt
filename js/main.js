@@ -34,7 +34,7 @@ $('document').ready(function(){
 	var tl1= new TimelineLite()
 	.to('#svg', 8, {
 		scale:2.7,
-		marginTop: "-40%",
+		paddingBottom: "3%",
 		useFrames:true
 	})
 	.to('#svg-wrap',5,{

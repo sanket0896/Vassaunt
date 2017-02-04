@@ -48,10 +48,11 @@ body{
 	height: 100%;
 	background-repeat: no-repeat;
 	/*padding-bottom: 400px;*/
-	margin-left: -2%;
-	transform: scale(0.5);
+	transform: scale(2.1);
 	overflow: hidden;
 	z-index: 1;
+
+	margin-top: -23%;
 }
 
 #svg-wrap{
@@ -59,7 +60,12 @@ body{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background-color: yellow;	
+	background-color: yellow;
+	background: url('/Vassaunt/images/svg-back.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;	
+
+
 }
 
 div.event-wrapper{
@@ -76,6 +82,11 @@ div.event.panel{
 	left: 0;
 	right: auto;
 	transition: all .5s;
+	text-align: center;
+}
+
+div.event.panel > h2{
+	margin-top: 50%;
 }
 
 .cursor-pointer{
@@ -97,7 +108,7 @@ div.event.full{
 
 div.event.panel1{
 	left: 0;
-	background: transparent url(/Vassaunt/images/img-1.jpg) no-repeat center center;
+	background: transparent url(/Vassaunt/images/img-1.png) no-repeat center center;
 }
 
 div.event.panel2{
@@ -112,7 +123,7 @@ div.event.panel3{
 
 div.event.panel4{
 	left: 75%;
-	background: transparent url(/Vassaunt/images/img-4.jpg) no-repeat center center;
+	background: transparent url(/Vassaunt/images/img-4.png) no-repeat center center;
 }
 
 div.close-button{
@@ -135,11 +146,13 @@ div.back-button{
 
 div.event-list{
 	position: absolute;
-	left: 5%;
+	left: 0;
 	top: 23%;
 	bottom: 5%;
 	overflow-y: auto;
-	padding-right: 25px;
+	padding-right: 0;
+	color: white;
+
 }
 
 div.event-list.mobile-screen{
@@ -167,19 +180,23 @@ div.event-list li{
 	/*border:2px solid transparent;*/
 	text-align: center;
 	max-width: 80%;
-	color: black;
+	color: #fc0;
 	transition: all 0.3s;
 }
 
 div.event-list li:hover{
 	cursor: pointer;
-	color: #fff;
+	color: #ff7;
 	/*border:2px solid rgba(0,0,0,0.3);*/
 }
 
 div.event-list li.selected{
 	/*border:2px solid black;*/
-	color: #fff;
+	color: #f70;
+}
+
+div.event-list p{
+	margin-left: -50%;
 }
 
 div.event-description{
@@ -193,8 +210,10 @@ div.event-description{
 	line-height: 2;
 	overflow-y: auto; 
 	padding-right: 30px;
-	font-family: serif;
+	font-family: Carrois, sans-serif;
+	color: #fc3;
 }
+
 
 .hidden{
 	display: none;
@@ -226,7 +245,8 @@ div.event-description{
 
 .abt-wrap{
 	position: absolute;
-	background: #34ef3d;
+	background: url('/Vassaunt/images/abt-back.png');
+	background-size: cover;
 	height: 100%;
 	width: 100%;
 }
@@ -239,6 +259,7 @@ div.event-description{
 	text-align: center; 
 	padding-right: 0;
 	overflow-y: auto;
+	color: white;
 }	
 .abt-description{
 	font-size: 1.2rem;
