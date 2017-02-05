@@ -188,7 +188,9 @@ div.event.panel{
 
 
 div.event.panel > h2{
-	margin-top: 50%;
+	margin-top: 80%;
+	color: #fc3;
+	line-height: 1.7;
 }
 
 .cursor-pointer{
