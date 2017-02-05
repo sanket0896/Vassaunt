@@ -1,7 +1,18 @@
-// $('document').load(function(){
-// 	$('#pre-load-wrap').removeClass("visible").addClass("hidden");
-// 	$('#content-wrap').removeClass("hidden").addClass("visible");
-// });
+$(window).load(function(){
+	var tl0= new TimelineLite()
+	.to('.preload-head', 0.3, {
+		opacity:0
+	})
+	.to('.preload-icon-wrap',0.3,{
+		opacity:0
+	},"-=1")
+	.to('.preload-left',0.5,{
+		x: "-100%"
+	},"+=0.2")
+	.to('.preload-right',0.5,{
+		x: "100%"
+	},"-=0.5");
+});
 
 
 $('document').ready(function(){
