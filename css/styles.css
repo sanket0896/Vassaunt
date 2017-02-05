@@ -118,7 +118,7 @@ body{
 	font-size: 2rem;
 	color: #fc3;
 	line-height: 1.5;
-	position: absolute;
+	position: fixed;
 	top: 30%;
 	left: 10%;
 	right: 10%;
@@ -622,7 +622,7 @@ h1
 }
 
 .preload-icon-wrap{
-	position: absolute;
+	position: fixed;
 	bottom: 30%;
 	left: 42.5%;
 	z-index: 10000001;
