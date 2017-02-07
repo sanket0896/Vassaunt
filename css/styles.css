@@ -302,6 +302,11 @@ div.event-list li{
 
 div.event-list>ul>li>p{
 	color: #fff;
+	font-size: 1.2rem;
+	padding-left: 30%;
+}
+div.event-list>ul>li>ul{
+	padding-left: 0;
 }
 
 div.event-list>ul>li>p:hover{

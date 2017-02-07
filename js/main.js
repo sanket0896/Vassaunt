@@ -35,29 +35,28 @@ $('document').ready(function(){
 	});
 
 	$(window).scroll(function() {
-		if($(window).scrollTop()>50)
+		if($(window).scrollTop()>50){
 			$("p.scroll-info").css("opacity",0);
-		else
+			$(".call-to-action").css("opacity",1);
+		}
+		else{
 			$("p.scroll-info").css("opacity",1);
+			$(".call-to-action").css("opacity",0);
+		}
 	});
 
 	//Initialise Controller
 	var controller = new ScrollMagic.Controller();
 	var winHeight= $(window).height();
-		console.log(winHeight);
 	var winWidth = $(window).width();
-		console.log(winWidth);
 
 	var hasEventPageArrived = false;
-	console.log("declaring:"+hasEventPageArrived);
 
 	var hasTeamPageArrived = false;
 
 	$(window).on("resize",function(){
 		winHeight = $(window).height();
-		console.log(winHeight);
 	    winWidth = $(window).width();
-		console.log(winWidth);
 	});
 
 
@@ -268,14 +267,12 @@ var countdownfunction = setInterval(function() {
 			.removeClass("cursor-pointer");
 		$('div.event-wrapper')
 			.removeClass("z-index");	
-			console.log("no");
 	}
 	else{
 		$('div.event.panel')
 			.addClass("cursor-pointer");
 		$('div.event-wrapper')
 			.addClass("z-index");	
-			console.log("yes");
 	}
 
 	if (!hasTeamPageArrived) {
@@ -426,10 +423,12 @@ console.log("get");
 			abc ="."+ abc.attr("class");
 			abc+=">ul";
 			if (lastShown!=abc) {
-			$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>ul.visible').slideToggle().removeClass("visible");
-			$(abc).slideToggle();
-			$(abc).addClass("visible");
-			
+				$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>ul.visible').slideToggle("linear").removeClass("visible");
+				$(abc).slideToggle("linear");
+				$(abc).addClass("visible");
+			}
+			else{
+				$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>ul.visible').slideToggle("linear").removeClass("visible");
 			}	
 			lastShown=abc;
 		}		
