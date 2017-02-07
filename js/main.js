@@ -45,6 +45,27 @@ $('document').ready(function(){
 		}
 	});
 
+	var muted,unmuted,audio,teamParent;
+
+	unmuted=$('#unmuted');
+	muted=$('#muted');
+	audio=$('audio')[0];
+	
+
+	unmuted.on("click",function () {
+		audio.pause();
+		audio.currentTime = 0;
+		unmuted.addClass("hidden");
+		muted.removeClass("hidden");
+	});
+
+	muted.on("click",function () {
+		audio.play();
+		muted.addClass("hidden");
+		unmuted.removeClass("hidden");
+	});
+
+
 	//Initialise Controller
 	var controller = new ScrollMagic.Controller();
 	var winHeight= $(window).height();
@@ -58,13 +79,7 @@ $('document').ready(function(){
 		winHeight = $(window).height();
 	    winWidth = $(window).width();
 	});
-
-
-	// var tween = TweenLite.to('#svg', 10, {
-	// 	scale:2.7,
-	// 	marginTop: "-40%",
-	// 	onStart: Start
-	// });
+	
 	var tl1= new TimelineLite()
 	.to('#svg', 8, {
 		scale:2.7,
@@ -278,25 +293,20 @@ var countdownfunction = setInterval(function() {
 	if (!hasTeamPageArrived) {
 		$('div.team-wrap')
 			.removeClass("z-index");
-			console.log(" team no");
 	}
 	else{
 		$('div.team-wrap')
 			.addClass("z-index");
-			console.log("team added yes");
 	}
 	});
 	
 
 	$('div.event.panel').on("click",function() {
-		console.log("srat alreadyClicked= "+alreadyClicked);
 		funCall=0;
 
 		if(!alreadyClicked){
 			alreadyClicked=true;
-			console.log("inside alreadyClicked= "+alreadyClicked);
 			
-		console.log("in click");
 		$(this).addClass("clicked");
 		if (hasEventPageArrived) {
 			
@@ -344,7 +354,6 @@ var countdownfunction = setInterval(function() {
 			} 
 			$('div.event.panel.full div.close-button').on("click",function() {
 				
-				console.log("alreadyClicked= "+alreadyClicked);
 				$('div.event.panel > h2').show();
 				thisPanel.removeClass("full");
 				$('body').removeClass("hide-overflow");
@@ -359,7 +368,6 @@ var countdownfunction = setInterval(function() {
 				thisPanel.one("transitionend", function() {
 					
 					thisPanel.removeClass("z-index",function(){
-							console.log("unhide");
 						});
 					$('div.event.panel')
 						.addClass("cursor-pointer");
@@ -412,13 +420,11 @@ var countdownfunction = setInterval(function() {
 							.addClass("visible");	
 					}
 				});
-console.log("get");
 			var lastShown,abc;
 		lastShown='.dummy';
 		$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>p').on("click",function(){
 			++funCall;
 			if(funCall==1){
-			console.log("pork");
 			abc = $(this).parent();
 			abc ="."+ abc.attr("class");
 			abc+=">ul";
@@ -438,6 +444,12 @@ console.log("get");
 	
 	}});
 
+	teamParent=$('#team-wrap').parent();
+
+	$(window).on('scroll',function(){
+		teamParent.css("min-height","0");
+	});
+
 	function Start(){
 		// var eventTop = ($(window).scrollTop()+winHeight-100);
 		// var direction = controller.info("scrollDirection");
@@ -449,12 +461,10 @@ console.log("get");
 		var direction = controller.info("scrollDirection");
 		if(direction=="FORWARD"){
 			hasEventPageArrived = true;
-		console.log("in function"+hasEventPageArrived);
 		}
 		else if(direction=="REVERSE"){
 			hasEventPageArrived = false;
 
-		console.log("back in function"+hasEventPageArrived);
 		}
 	}
 
@@ -462,12 +472,10 @@ console.log("get");
 		var direction = controller.info("scrollDirection");
 		if(direction=="REVERSE"){
 			hasEventPageArrived = true;
-		console.log("in function"+hasEventPageArrived);
 		}
 		else if(direction=="FORWARD"){
 			hasEventPageArrived = false;
 
-		console.log("back in function"+hasEventPageArrived);
 		}
 	}
 
@@ -476,12 +484,10 @@ console.log("get");
 		var direction = controller.info("scrollDirection");
 		if(direction=="FORWARD"){
 			hasTeamPageArrived = true;
-		console.log("team arrived"+hasTeamPageArrived);
 		}
 		else if(direction=="REVERSE"){
 			hasTeamPageArrived = false;
 
-		console.log("team arrived"+hasTeamPageArrived);
 		}
 	}
 
@@ -489,12 +495,10 @@ console.log("get");
 		// var direction = controller.info("scrollDirection");
 		// if(direction=="REVERSE"){
 		// 	hasTeamPageArrived = true;
-		// console.log("team arrived"+hasTeamPageArrived);
 		// }
 		// else if(direction=="FORWARD"){
 		// 	hasTeamPageArrived = false;
 
-		// console.log("team arrived"+hasTeamPageArrived);
 		// }
 	}
 

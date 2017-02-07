@@ -125,6 +125,15 @@ body{
 	z-index: 10000001;
 }
 
+.sound{
+	position: fixed;
+	z-index: 9999999;
+	top:60px;
+	left:10px;
+	height:35px;
+	cursor:pointer;
+}
+
 #svg{
 	background-size: contain;
 	/*background: url("/Vassaunt/images/gate.svg");*/
@@ -303,6 +312,7 @@ div.event-list li{
 div.event-list>ul>li>p{
 	color: #fff;
 	font-size: 1.2rem;
+	line-height: 1.8;
 	padding-left: 30%;
 }
 div.event-list>ul>li>ul{
@@ -313,8 +323,8 @@ div.event-list>ul>li>p:hover{
 	color: #ffa;
 }
 
-div.event-list>ul>li>p.ffa-color{
-	color: #ffa;
+.event-list>ul>li>p>u{
+	margin-left: 25px;
 }
 
 div.event-list li:hover{
@@ -347,6 +357,12 @@ div.event-description{
 	color: #fc3;
 }
 
+div.event-description>div>ul>li{
+	font-family: GOT,serif;
+	margin-top: 1.25rem;
+	list-style: none;
+}
+
 
 .hidden{
 	display: none;
@@ -356,6 +372,7 @@ div.event-description{
 .visible{
 	display: block;
 }
+
 
 *::-webkit-scrollbar{
 	width: 3px;
