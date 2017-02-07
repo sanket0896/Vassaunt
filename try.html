@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Try</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+
+		p{
+			margin: 0;
+			margin-bottom: 20px;
+		}
+
+		.box{
+			display: none;
+		}
+
+		.visible{
+			display: block;
+		}
+		.no-show{
+			display: none;
+		}
+		.force-no-show{
+			display: none !important;
+		}
+
+		
+	</style>
+	<script src="/Vassaunt/js/jquery-2.2.4.min.js"></script>
+	
+</head>
+<body>
+
+	<div class="box" style="background: yellow;"></div>
+	<div class="box" style="background: red;"></div>
+	<div class="box" style="background: blue;"></div>
+	<div class="box" style="background: green;"></div>
+	<p class="force-no-show dummy"></p>
+	<ul>
+		<li class="p1"> <p style="background: yellow;">Para 1</p>
+		<ul class="no-show">
+		<li class="p1">Item1</li>
+		<li class="p1">Item2</li>
+		<li class="p1">Item3</li>
+		<li class="p1">Item4</li></ul></li>
+
+		<li class="p2"> <p style="background: red;">Para 2</p>
+		<ul class="no-show">
+		<li class="p2">Item1</li>
+		<li class="p2">Item2</li>
+		<li class="p2">Item3</li>
+		<li class="p2">Item4</li></ul></li>
+
+		<li class="p3"> <p style="background: blue;">Para 3</p>
+		<ul class="no-show">
+		<li class="p3">Item1</li>
+		<li class="p3">Item2</li>
+		<li class="p3">Item3</li>
+		<li class="p3">Item4</li></ul></li>
+
+		<li class="p4"> <p style="background: green;">Para 4</p>
+		<ul class="no-show">
+		<li class="p4">Item1</li>
+		<li class="p4">Item2</li>
+		<li class="p4">Item3</li>
+		<li class="p4">Item4</li></ul></li>
+		
+	</ul>
+	<script type="text/javascript">
+
+		var lastShown,abc;
+		lastShown='.dummy';
+		$(lastShown).slideToggle();
+		$('ul>li>p').on("click",function(){
+			// $("div.box").slideToggle();
+			abc = $(this).parent();
+			abc ="."+ abc.attr("class");
+			abc+=">ul";
+			console.log(abc+"    "+lastShown);
+			if(lastShown!=abc){
+			$(lastShown).slideToggle();
+			$(abc).slideToggle();
+			console.log("hi");
+			lastShown=abc;}
+			// $(this).find('li').addClass("",function(){
+			// 	console.log("kjl");
+			// });
+		});
+	</script>
+</body>
+</html>

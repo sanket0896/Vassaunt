@@ -11,7 +11,8 @@ $(window).load(function(){
 	},"+=0.2")
 	.to('.preload-right',0.5,{
 		x: "100%"
-	},"-=0.5");
+	},"-=0.5")
+	$('.preload-head,.preload-icon-wrap,.preload-left,.preload-right').addClass("hidden");
 });
 
 
@@ -254,7 +255,8 @@ var countdownfunction = setInterval(function() {
 
 	/*************** Event Page ***************/
 
-	var isFull,thisPanel,thisItem,selectedItem,selectedDescription;
+	var isFull,thisPanel,thisItem,selectedItem,selectedDescription,funCall;
+	var alreadyClicked=false;
 
 	isFull=false;
 	thisItem='div.event.full div.event-list li.item1';
@@ -289,8 +291,16 @@ var countdownfunction = setInterval(function() {
 	});
 	
 
-	$('div.event.panel').click(function() {
+	$('div.event.panel').on("click",function() {
+		console.log("srat alreadyClicked= "+alreadyClicked);
+		funCall=0;
+
+		if(!alreadyClicked){
+			alreadyClicked=true;
+			console.log("inside alreadyClicked= "+alreadyClicked);
+			
 		console.log("in click");
+		$(this).addClass("clicked");
 		if (hasEventPageArrived) {
 			
 			if(!isFull){
@@ -312,6 +322,7 @@ var countdownfunction = setInterval(function() {
 							.addClass("mobile-screen");
 						$('div.event.panel.full div.event-content-wrapper div.event-description')
 							.addClass("mobile-screen hidden");	
+						$('.call-to-action').hide();
 					}
 					else{
 						$('div.event.panel.full div.event-content-wrapper div.event-list')
@@ -321,8 +332,8 @@ var countdownfunction = setInterval(function() {
 
 				$(selectedDescription).removeClass("visible");
 				$(thisItem).removeClass("selected");
-				thisItem='div.event.full div.event-list li.item1';
-				selectedDescription='div.event.full div.event-description div.item1';
+				thisItem='div.event.full div.event-list .item1';
+				selectedDescription='div.event.full div.event-description .item1';
 				
 				
 					
@@ -335,6 +346,8 @@ var countdownfunction = setInterval(function() {
 				isFull=true;
 			} 
 			$('div.event.panel.full div.close-button').on("click",function() {
+				
+				console.log("alreadyClicked= "+alreadyClicked);
 				$('div.event.panel > h2').show();
 				thisPanel.removeClass("full");
 				$('body').removeClass("hide-overflow");
@@ -354,6 +367,8 @@ var countdownfunction = setInterval(function() {
 					$('div.event.panel')
 						.addClass("cursor-pointer");
 					isFull=false;
+					$('.call-to-action').show();
+					alreadyClicked=false;
 				});
 				
 			});
@@ -374,7 +389,7 @@ var countdownfunction = setInterval(function() {
 			});
 
 
-			$('div.event.full div.event-list li').on("click",function() {
+			$('div.event.full div.event-list li>ul>li').on("click",function() {
 					$(selectedDescription)
 						.removeClass("visible");
 					$(thisItem)
@@ -382,7 +397,7 @@ var countdownfunction = setInterval(function() {
 					thisItem=$(this);
 					selectedItem=thisItem.attr("class");
 					thisItem.addClass("selected");
-					selectedDescription='div.event.full div.event-description div.'+selectedItem;
+					selectedDescription='div.event.full div.event-description .'+selectedItem;
 					
 					if (winWidth>767) {
 						$(selectedDescription)
@@ -400,6 +415,28 @@ var countdownfunction = setInterval(function() {
 							.addClass("visible");	
 					}
 				});
+console.log("get");
+			var lastShown,abc;
+		lastShown='.dummy';
+		$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>p').on("click",function(){
+			++funCall;
+			if(funCall==1){
+			console.log("pork");
+			abc = $(this).parent();
+			abc ="."+ abc.attr("class");
+			abc+=">ul";
+			if (lastShown!=abc) {
+			$('div.event.panel.full div.event-content-wrapper div.event-list>ul>li>ul.visible').slideToggle().removeClass("visible");
+			$(abc).slideToggle();
+			$(abc).addClass("visible");
+			
+			}	
+			lastShown=abc;
+		}		
+		});
+				
+	}
+	
 	}});
 
 	function Start(){
