@@ -21,6 +21,25 @@
 	<link href="https://fonts.googleapis.com/css?family=Carrois+Gothic" rel="stylesheet">
     <link rel="stylesheet" href="/Vassaunt/css/styles.css">
 	
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+  	<script>
+	    var OneSignal = window.OneSignal || [];
+	    OneSignal.push(["init", {
+	      appId: "404c8b03-5a9f-4099-a70e-b1471814ccc4",
+	      autoRegister: false, /* Set to true to automatically prompt visitors */
+	      subdomainName: 'https://vassaunt2k17.onesignal.com',
+	      /*
+	      subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
+	      */
+	      httpPermissionRequest: {
+	        enable: true
+	      },
+	      notifyButton: {
+	          enable: true /* Set to false to hide */
+	      }
+	    }]);
+	</script>
+	
 </head>
 <body>
 
@@ -45,8 +64,7 @@
 		<img src="/Vassaunt/images/unmute.png" id="unmuted" class="sound">
 		<img src="/Vassaunt/images/mute.png" id="muted" class="sound hidden">
 		
-	  
-<div class="svg-wrap" id="svg-wrap">
+	<div class="svg-wrap" id="svg-wrap">
 	<p class="scroll-info">
 		Scroll Down to Enter
 	</p>
@@ -3657,6 +3675,7 @@
 		</g>
      </svg>
 </div>
+
 	<div class="abt-wrap" id="abt-wrap">
 
 		<div class="abt" id="abt">
